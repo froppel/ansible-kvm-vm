@@ -17,6 +17,7 @@ Role Variables
 | `kvm_vm_hostname` | :heavy_check_mark:      |  | The FQDN for the VM |
 | `kvm_vm_public_ip` | :heavy_check_mark:      |  | The reachable public IP for the VM |
 | `kvm_vm_root_pwd` | :heavy_check_mark:      |  | Password for the root user of the VM |
+| `kvm_vm_ssh_key` | :x:      |  | String of the SSH key for the root user on the VM |
 | `kvm_vm_base_img` | :heavy_check_mark:      |  | Name of the base image located in /var/lib/libvirt/images on the KVM hypervisor |
 | `kvm_vm_vcpus` | :x:      | ```1``` | Number of vCPUS to assign to the VM |
 | `kvm_vm_ram` | :x:      | ```1024``` | Amount of ram to give to the VM in megabytes |
@@ -39,6 +40,8 @@ Example Playbook
     kvm_vm_hostname: "vm1.example.com"
     kvm_vm_public_ip: 192.168.122.10
     kvm_vm_root_pwd: "p@ssw0rd"
+    kvm_vm_root_key: |
+      "ssh-rsa AAA... user@host"
     kvm_vm_base_img: rhel-guest-image-7.qcow2
     kvm_vm_vcpus: "2"
     kvm_vm_ram: "4096"
